@@ -185,6 +185,7 @@ final class SignupViewModel: ObservableObject {
             )
             Task {
                 do {
+                    currentStep = .otp // for testing
                     try await apiService.registerUser(request: request)
                     currentStep = .otp
                 } catch {
